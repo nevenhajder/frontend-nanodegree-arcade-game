@@ -77,6 +77,7 @@ Player.prototype.checkWin = function() {
             imageSize: "100x100",
             confirmButtonText: "Huzzah!"
         });
+        /* Reset player position and lives */
         this.reset();
         this.lives = 3;
         return true;
@@ -99,8 +100,8 @@ Player.prototype.checkCollisions = function(enemies) {
 
 /* Check if the player is still alive */
 Player.prototype.checkAlive = function() {
-
     if (this.lives === 0) {
+        /* Game Over message */
         swal({
             title: "Game Over!",
             imageUrl: "http://vignette2.wikia.nocookie.net/fantendo/images/b/b2/Sad_Face.png/revision/latest?cb=20131020025647",
@@ -121,7 +122,7 @@ Player.prototype.update = function( x,y ) {
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 
-    /* Render the number of lives */
+    /* Lives */
     ctx.fillStyle = '#FF2400';
     ctx.font = '30px Comic Sans';
     for (var i=0; i<player.lives; i++) {
