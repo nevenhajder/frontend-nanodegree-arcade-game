@@ -10,7 +10,7 @@ APP.constants = {
     canvasHeight: 606,
     columnWidth: 101,
     rowHeight: 83,
-    numEnemies: 7,
+    numEnemies: 15,
     enemyBaseY: 139,
     enemyBaseSpeed: 250,
     enemySpeedFactor: 50
@@ -194,7 +194,7 @@ APP.player = new APP.Player();
 APP.allEnemies = [];
 
 /* Generate enemies and store them in allEnemies */
-for (var i = 0; i < 7; i++) {
+for (var i = 0; i < APP.constants.numEnemies; i++) {
     APP.allEnemies[i] = new APP.Enemy();
 }
 
